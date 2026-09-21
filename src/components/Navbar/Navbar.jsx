@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import logo from '../../assets/logo/advance-logo.png';
 import './Navbar.css';
 
@@ -49,15 +49,18 @@ export default function Navbar() {
             onClick={closeMenu}
           >
             Request Consultation
+            <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </nav>
 
         <div className="navbar-actions">
           <Link to="/contact" className="navbar-button desktop-button">
             Request Consultation
+            <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
 
           <button
+            type="button"
             className="menu-button"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation"
