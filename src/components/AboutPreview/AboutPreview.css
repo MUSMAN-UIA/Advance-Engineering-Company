@@ -53,13 +53,13 @@
   font-size: 11px;
 }
 
-.about-content .section-label::before {
+/* .about-content .section-label::before {
   content: '';
   width: 24px;
   height: 2px;
   background: currentColor;
   flex-shrink: 0;
-}
+} */
 
 .about-text {
   color: var(--text);
