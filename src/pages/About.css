@@ -344,6 +344,8 @@ section.about-page-hero h1.banner-title span {
 }
 
 .about-company-content .section-title {
+  white-space: normal;
+  overflow-wrap: anywhere;
   margin-top: 10px;
 
   line-height: 1.2;
@@ -700,15 +702,17 @@ section.about-page-hero h1.banner-title span {
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(2, minmax(0, 1fr));
 
-  gap: 28px;
+  gap: clamp(18px, 2.4vw, 28px);
 }
 
 .mission-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
   min-height: 400px;
 
-  padding: 45px;
+  padding: clamp(24px, 3.5vw, 45px);
 
   border-radius: 16px;
 
@@ -1122,6 +1126,50 @@ section.about-page-hero h1.banner-title span {
 }
 
 @media (max-width: 700px) {
+  .mission-section.section {
+    padding-block: 48px;
+  }
+
+  .mission-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .mission-card {
+    min-height: 0;
+    padding: 28px 24px;
+    border-radius: 14px;
+  }
+
+  .mission-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 20px;
+  }
+
+  .mission-card h2 {
+    font-size: clamp(1.5rem, 5.5vw, 2rem);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .mission-card p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .about-company-content {
+    min-width: 0;
+  }
+
+  .about-company-content .section-title {
+    font-size: clamp(1.65rem, 6vw, 2.2rem);
+  }
+
+  .about-company-points {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .about-page-hero {
     padding: 50px 0 70px;
   }
