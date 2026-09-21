@@ -1,0 +1,156 @@
+/* Shared finishes; page styles retain their layouts and banner sizes. */
+:root {
+  --surface-shadow: 0 8px 28px rgba(28, 42, 64, 0.055);
+  --surface-radius: 16px;
+}
+
+html { scroll-padding-top: 110px; }
+
+.navbar {
+  box-shadow: 0 4px 24px rgba(28, 42, 64, 0.045);
+}
+.navbar-links a[aria-current="page"] { color: var(--dark-blue); }
+.navbar-links a[aria-current="page"]::after { width: 100%; }
+
+section h1.banner-title { max-width: 100%; }
+
+section .section-title,
+.services-heading h2,
+.compliance-content h2,
+.service-detail-block h2,
+.project-detail-block h2,
+.contact-form-wrapper h2 {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+section .section-label { color: var(--dark-green); }
+
+.services-preview,
+.certifications-section,
+.about-company,
+.contact-section {
+  background: linear-gradient(135deg, #fff 40%, #f3f6f9);
+}
+
+.services-section,
+.projects-section,
+.projects-preview,
+.service-detail-section,
+.project-detail-content,
+.specializations-section {
+  background: var(--section-bg);
+}
+
+:is(.services-preview-card, .projects-preview-card, .service-card, .project-card,
+  .certification-card, .specialization-card, .company-info-card, .contact-form-wrapper,
+  .project-info-card, .service-benefit-card) {
+  border: 1px solid var(--border);
+  border-radius: var(--surface-radius);
+  box-shadow: var(--surface-shadow);
+}
+
+:is(.services-preview-card, .projects-preview-card, .service-card, .project-card,
+  .certification-card):focus-within {
+  border-color: var(--primary-blue);
+  box-shadow: 0 12px 36px rgba(49, 95, 159, 0.13);
+}
+
+:is(.services-preview-card, .projects-preview-card, .service-card, .project-card,
+  .certification-card, .specialization-card, .company-info-card) h3 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+:is(.about-company-card, .compliance-card, .service-sidebar-card, .project-contact-card) {
+  background: linear-gradient(145deg, #2c4566, #17283e);
+  border-radius: var(--surface-radius);
+  box-shadow: 0 18px 45px rgba(28, 42, 64, 0.12);
+}
+
+:is(.navbar-button, .services-view-all, .projects-view-all, .about-project-btn,
+  .contact-submit, .profile-download-btn) {
+  border-radius: 9px;
+  min-height: 48px;
+  font-weight: 600;
+}
+
+.project-filters { gap: 10px; }
+.filter-btn { border-radius: 100px; min-height: 44px; }
+.filter-btn.active {
+  background: var(--dark-blue);
+  border-color: var(--dark-blue);
+  box-shadow: 0 4px 12px rgba(49, 95, 159, 0.16);
+}
+
+.contact-form-wrapper { background: #fff; }
+.form-group :is(input, select, textarea) {
+  background: #f8fafc;
+  border: 1px solid #dbe2e9;
+  border-radius: 9px;
+  color: var(--dark);
+  font-size: 16px;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+.form-group :is(input, select, textarea):focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+  border-color: var(--primary-blue);
+  background: #fff;
+}
+
+.site-footer {
+  padding: 40px 0 0;
+  background: #17283e;
+  color: #d6dfeb;
+  border-top: 3px solid var(--primary-green);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 30px;
+}
+.footer-brand { color: white; font-size: 24px; letter-spacing: -0.03em; }
+.footer-brand span { display: block; color: #b6c850; font-size: 14px; letter-spacing: 0.08em; }
+.footer-intro p { max-width: 360px; margin: 12px 0; font-size: 14px; line-height: 1.8; }
+.footer-contact { display: inline-flex; align-items: center; gap: 10px; color: #b6c850; }
+.footer-grid nav { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.footer-grid h2 { color: white; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.footer-grid nav a { font-size: 14px; }
+.site-footer a:hover { color: #b6c850; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid #34465e;
+  padding: 14px 0;
+  font-size: 12px;
+  color: #acbcd0;
+}
+
+@media (max-width: 850px) {
+  .navbar-links { top: 100%; box-shadow: 0 16px 24px rgba(28, 42, 64, 0.08); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-intro { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 60px 0; }
+  .contact-form-wrapper { padding: 26px 20px; }
+  .project-info-card, .service-sidebar-card, .compliance-card { padding: 28px 24px; }
+  .site-footer { padding-top: 30px; }
+  .footer-grid { gap: 20px; padding-bottom: 24px; }
+  .footer-bottom { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

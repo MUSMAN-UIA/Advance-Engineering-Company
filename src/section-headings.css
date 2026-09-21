@@ -1,0 +1,51 @@
+/* Shared section typography; existing margins and layout remain page-owned. */
+.scroll-reveal-root h2:is(h2, .section-title) {
+  --heading-ink: var(--dark);
+  --heading-blue: var(--dark-blue);
+  --heading-green: var(--dark-green);
+  font-family: var(--heading-font);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 47px;
+  white-space: normal;
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+  color: var(--heading-ink);
+}
+
+/* Light theme tints keep headings legible on blue and green surfaces. */
+.scroll-reveal-root section :is(.mission-card, .about-contact-inner, .company-profile-inner) h2:is(h2, .section-title) {
+  --heading-ink: #ffffff;
+  --heading-blue: #dce9fa;
+  --heading-green: #edf3d1;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .scroll-reveal-root h2:is(h2, .section-title) {
+    background-image: linear-gradient(105deg,
+      var(--heading-ink) 0%, var(--heading-ink) 20%,
+      var(--heading-blue) 48%, var(--heading-blue) 62%,
+      var(--heading-green) 90%, var(--heading-green) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  }
+
+  .scroll-reveal-root h2:is(h2, .section-title) span {
+    background: none;
+    color: inherit;
+    -webkit-text-fill-color: inherit;
+  }
+}
+
+@media (forced-colors: active), print {
+  .scroll-reveal-root h2:is(h2, .section-title),
+  .scroll-reveal-root h2:is(h2, .section-title) span {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+  }
+}

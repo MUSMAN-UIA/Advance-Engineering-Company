@@ -1,0 +1,16 @@
+.scroll-reveal-root {
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal-pending {
+    opacity: 0;
+  }
+}
+
+@media print {
+  .scroll-reveal-root [data-reveal] {
+    opacity: 1 !important;
+    translate: none !important;
+  }
+}

@@ -1,0 +1,62 @@
+/* Hide only the document scrollbar; nested scrolling controls stay native. */
+html.building-scroll-enabled {
+  scrollbar-width: none;
+}
+
+html.building-scroll-enabled::-webkit-scrollbar,
+html.building-scroll-enabled body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.building-scroll {
+  --building-progress: 0;
+  position: fixed;
+  right: min(8px, 1vw);
+  bottom: max(16px, env(safe-area-inset-bottom));
+  width: min(58px, 4vw);
+  aspect-ratio: 180 / 140;
+  z-index: 900;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(28, 42, 64, 0.14));
+}
+
+.building-scroll[hidden] { display: none; }
+
+.building-scroll-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.building-scroll-fill {
+  clip-path: inset(0 0 calc((1 - var(--building-progress)) * 100%) 0);
+  transition: clip-path 140ms linear;
+}
+
+@media (max-width: 600px) {
+  .building-scroll {
+    width: min(14px, 4vw);
+    right: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .building-scroll-fill { transition: none; }
+}
+
+@media (forced-colors: active) {
+  html.building-scroll-enabled { scrollbar-width: auto; }
+  html.building-scroll-enabled::-webkit-scrollbar,
+  html.building-scroll-enabled body::-webkit-scrollbar {
+    display: initial;
+    width: auto;
+    height: auto;
+  }
+  .building-scroll { display: none; }
+}
+
+@media print {
+  .building-scroll { display: none; }
+}

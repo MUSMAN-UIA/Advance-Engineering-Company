@@ -1,0 +1,30 @@
+.major-equipment {
+  background: var(--background);
+  font-family: var(--body-font);
+}
+
+/* Card surfaces, image sizing, decorations and responsive grid reuse Projects styles. */
+.major-equipment-details {
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.major-equipment-detail {
+  padding: 10px 0;
+  border-top: 1px solid #e9eef3;
+}
+
+.major-equipment-detail:last-child {
+  padding-bottom: 0;
+}
+
+.major-equipment-detail dt {
+  color: var(--light-text);
+  font-size: 12px;
+}
+
+.major-equipment-detail dd {
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
