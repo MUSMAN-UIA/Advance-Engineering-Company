@@ -17,6 +17,7 @@ import ServiceDetails from './pages/ServiceDetails';
 import './polish.css';
 import './catalog-cards.css';
 import './section-headings.css';
+import './responsive.css';
 
 export default function App() {
   return (

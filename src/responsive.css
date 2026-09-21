@@ -1,0 +1,154 @@
+/* Shared responsive adjustments, loaded after the page and theme styles. */
+.scroll-reveal-root :is(.about-company-grid, .company-info-grid, .values-grid,
+  .leadership-grid, .contact-grid, .certification-grid, .specialization-grid,
+  .compliance-grid, .service-detail-grid, .project-detail-grid, .services-grid,
+  .projects-grid, .form-row) > * {
+  min-width: 0;
+}
+.scroll-reveal-root :is(.contact-info-card, .project-info-row, .company-info-card,
+  .specialization-card, .service-capability-item, .scope-item) {
+  overflow-wrap: anywhere;
+}
+.scroll-reveal-root :is(.project-detail-meta, .project-meta, .project-filters) {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1050px) {
+  .scroll-reveal-root :is(.services-grid, .projects-grid, .certification-grid, .specialization-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .scroll-reveal-root .section { padding-block: 60px; }
+  .scroll-reveal-root h2:is(h2, .section-title) {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    line-height: 1.22;
+  }
+  .scroll-reveal-root :is(.about-company-grid, .leadership-grid, .contact-grid,
+    .compliance-grid, .service-detail-grid, .project-detail-grid) { gap: 36px; }
+  .scroll-reveal-root .project-gallery img {
+    display: block; width: 100%; height: auto; object-fit: contain;
+  }
+  .scroll-reveal-root :is(.about-contact-inner, .company-profile-inner) {
+    flex-wrap: wrap; gap: 24px;
+  }
+}
+
+@media (max-width: 650px) {
+  .scroll-reveal-root :is(.services-grid, .projects-grid) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .scroll-reveal-root :is(.services-page, .projects-page) :is(.service-content, .project-content) {
+    padding: 20px;
+  }
+  .scroll-reveal-root :is(.services-page, .projects-page) :is(.service-content, .project-content) h3 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .scroll-reveal-root :is(.services-page, .projects-page) :is(.service-content, .project-content) p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .scroll-reveal-root .services-page .service-icon {
+    width: 54px; height: 54px; margin: 16px 20px 0; border-width: 3px;
+  }
+  .scroll-reveal-root :is(.service-detail-main, .project-main-content,
+    .service-detail-sidebar, .project-sidebar, .compliance-content) { min-width: 0; }
+  .scroll-reveal-root :is(.service-detail-sidebar, .project-sidebar) { position: static; }
+  .scroll-reveal-root .project-info-row {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 12px; align-items: start;
+  }
+  .scroll-reveal-root :is(.service-capability-item, .scope-item) {
+    align-items: flex-start; padding: 14px; gap: 10px;
+  }
+  .scroll-reveal-root :is(.service-capability-item, .scope-item, .compliance-points) svg {
+    flex-shrink: 0;
+  }
+  .scroll-reveal-root :is(.specialization-card, .director-card) > div { min-width: 0; }
+  .scroll-reveal-root .specialization-code { flex-shrink: 0; width: 54px; height: 54px; }
+  .scroll-reveal-root .contact-info-card > div { min-width: 0; max-width: 100%; }
+  .scroll-reveal-root .contact-info-card a { overflow-wrap: anywhere; }
+  .scroll-reveal-root :is(.service-sidebar-card, .project-contact-card) a {
+    min-width: 0; max-width: 100%; white-space: normal;
+    text-align: center; padding: 12px 14px; line-height: 1.5;
+  }
+  .scroll-reveal-root .container,
+  .site-footer .container { width: calc(100% - 36px); }
+  .scroll-reveal-root .section { padding-block: 44px; }
+  .scroll-reveal-root h2:is(h2, .section-title) {
+    font-size: clamp(1.55rem, 6.2vw, 2rem);
+    line-height: 1.23;
+    letter-spacing: -0.025em;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  .scroll-reveal-root :is(.about-page-hero, .service-detail-hero, .project-detail-hero) {
+    min-height: 0; padding-block: 48px;
+  }
+  .scroll-reveal-root :is(.about-page-hero, .service-detail-hero, .project-detail-hero) h1 {
+    font-size: clamp(1.9rem, 7vw, 2.5rem); line-height: 1.15; white-space: normal;
+  }
+  .scroll-reveal-root :is(.about-company-grid, .leadership-grid, .contact-grid,
+    .compliance-grid, .service-detail-grid, .project-detail-grid) {
+    grid-template-columns: minmax(0, 1fr); gap: 28px;
+  }
+  .scroll-reveal-root :is(.company-info-grid, .values-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+  }
+  .scroll-reveal-root :is(.company-info-card, .value-card) {
+    min-height: 0; padding: 18px 14px; border-radius: 14px;
+  }
+  .scroll-reveal-root :is(.company-info-card, .value-card) h3 {
+    font-size: 17px; line-height: 1.35; overflow-wrap: anywhere;
+  }
+  .scroll-reveal-root :is(.company-info-card, .value-card) p { font-size: 13px; line-height: 1.65; }
+  .scroll-reveal-root :is(.about-company-card, .director-card, .compliance-card,
+    .service-sidebar-card, .service-benefit-card, .project-info-card, .project-contact-card) {
+    padding: 24px 20px; border-radius: 16px;
+  }
+  .scroll-reveal-root .director-card { align-items: flex-start; gap: 16px; }
+  .scroll-reveal-root .director-icon { width: 54px; height: 54px; }
+  .scroll-reveal-root :is(.about-contact-inner, .company-profile-inner) {
+    flex-direction: column; align-items: flex-start; gap: 20px;
+  }
+  .scroll-reveal-root :is(.about-contact-inner, .company-profile-inner) p { line-height: 1.65; }
+  .scroll-reveal-root :is(.about-contact-inner > a, .profile-download-btn) {
+    width: 100%; min-width: 0; padding: 12px 16px; text-align: center;
+  }
+  .scroll-reveal-root :is(.certification-grid, .specialization-grid,
+    .service-capability-grid, .scope-list, .compliance-points, .form-row) {
+    grid-template-columns: minmax(0, 1fr); gap: 16px;
+  }
+  .scroll-reveal-root :is(.services-grid, .projects-grid) { gap: 20px; }
+  .scroll-reveal-root :is(.certification-card, .specialization-card) {
+    min-height: 0; padding: 22px; border-radius: 16px;
+  }
+  .scroll-reveal-root .specialization-card { gap: 14px; }
+  .scroll-reveal-root .specialization-code { min-width: 54px; }
+  .scroll-reveal-root :is(.services-heading, .projects-heading, .certifications-heading) { margin-bottom: 28px; }
+  .scroll-reveal-root .project-filters { gap: 8px; }
+  .scroll-reveal-root .project-filters button { min-height: 44px; padding: 10px 14px; }
+  .scroll-reveal-root .contact-info-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+  }
+  .scroll-reveal-root .contact-info-card {
+    flex-direction: column; align-items: flex-start; gap: 12px;
+    padding: 16px; border-radius: 14px;
+  }
+  .scroll-reveal-root .contact-info-card strong { font-size: 12px; line-height: 1.5; }
+  .scroll-reveal-root .contact-company-card { padding: 22px; gap: 14px; }
+  .scroll-reveal-root .contact-form-wrapper { padding: 24px 18px; }
+  .scroll-reveal-root .form-group :is(input, select, textarea) {
+    min-width: 0; max-width: 100%; font-size: 16px;
+  }
+  .scroll-reveal-root :is(.service-detail-block, .project-detail-block) { margin-bottom: 28px; }
+  .scroll-reveal-root :is(.service-detail-block, .project-detail-block) p { font-size: 14px; line-height: 1.8; }
+  .site-footer .footer-grid > * { min-width: 0; overflow-wrap: anywhere; }
+  .site-footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+  .site-footer .footer-bottom { gap: 12px; align-items: flex-start; }
+}
+
+@media (max-width: 360px) {
+  .scroll-reveal-root .contact-info-list { grid-template-columns: minmax(0, 1fr); }
+  .scroll-reveal-root .contact-info-card { flex-direction: row; }
+  .scroll-reveal-root :is(.company-info-grid, .values-grid) { grid-template-columns: minmax(0, 1fr); }
+}
