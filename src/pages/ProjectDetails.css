@@ -361,6 +361,8 @@
   }
 
   .project-gallery img {
-    height: 230px;
+    display: block;
+    height: auto;
+    object-fit: contain;
   }
 }

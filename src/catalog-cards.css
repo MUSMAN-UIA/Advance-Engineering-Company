@@ -180,6 +180,42 @@
   letter-spacing: 1.2px;
 }
 
+/* Keep text-bearing artwork intact on smaller screens. */
+@media (max-width: 950px) {
+  :is(.services-page, .catalog-services) .service-image,
+  :is(.projects-page, .catalog-projects) .project-image {
+    height: auto;
+  }
+
+  :is(.services-page, .catalog-services) .service-image img,
+  :is(.projects-page, .catalog-projects) .project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  :is(.services-page, .catalog-services) .service-icon {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-shrink: 0;
+    margin: 18px 22px 0;
+    width: 64px;
+    height: 64px;
+  }
+
+  :is(.services-page, .catalog-services) .service-card .service-content {
+    padding-top: 18px;
+  }
+
+  :is(.projects-page, .catalog-projects) .project-category {
+    position: static;
+    display: table;
+    margin: 12px 18px;
+  }
+}
+
 @media (max-width: 650px) {
   :is(.services-page, .projects-page, .certifications-page, .catalog-projects, .catalog-services) {
     --catalog-radius: 18px;
