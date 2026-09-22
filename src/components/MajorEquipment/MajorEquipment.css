@@ -5,12 +5,16 @@
 
 /* Card surfaces, image sizing, decorations and responsive grid reuse Projects styles. */
 .major-equipment-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 16px;
   width: 100%;
   font-size: 14px;
   line-height: 1.8;
 }
 
 .major-equipment-detail {
+  min-width: 0;
   padding: 10px 0;
   border-top: 1px solid #e9eef3;
 }
